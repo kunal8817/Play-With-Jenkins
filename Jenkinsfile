@@ -1,10 +1,12 @@
 pipeline {
+
   agent { label 'kubepod' }
 
   stages {
+
     stage('Checkout Source') {
       steps {
-        git branch: 'main', changelog: false, poll: false, url: 'https://github.com/kunal8817/Play-With-Jenkins'
+        git url:'https://github.com/kunal8817/Play-With-Jenkins', branch:'main'
       }
     }
 
@@ -15,6 +17,7 @@ pipeline {
         }
       }
     }
-    
+
   }
+
 }
